@@ -1,0 +1,2 @@
+@props(['records'])
+{{__('Showing')}} <span {{ $attributes->merge(['class'=>'font-bold']) }}>{{ intval($records->firstItem()) }}</span> to <span {{ $attributes->merge(['class'=>'font-bold']) }}>{{ intval($records->lastItem()) }}</span> of <span {{ $attributes->merge(['class'=>'font-bold']) }}>{{  $records->total() }}</span> {{__('entries')}}

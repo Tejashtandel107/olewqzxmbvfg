@@ -1,0 +1,111 @@
+.invoice-main{
+    --border-color: #dee2e6;
+    --bg-color: #f6f7fb;
+    font-size: 18px;
+    font-family: "Open Sans","Nunito",sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    .invoice-main b,
+    .invoice-main table th {
+        font-weight: 600;
+    }
+    .w-100 {
+        width: 100%;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .text-right {
+        text-align: right;
+    }
+    .text-left {
+        text-align: left;
+    }
+    .border {
+        border: 1px solid var(--border-color);
+    }
+    table .item-label,
+    table .item-value {
+        vertical-align: middle;
+        border-top: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+    }
+    table .last-column .item-label,
+    table .last-column .item-value {
+        border-right: 1px solid var(--border-color);
+    }
+    table .last-row .item-label,
+    table .last-row .item-value {
+        border-bottom: 1px solid var(--border-color);
+    }
+    .company-logo {
+        vertical-align: bottom;
+        width: 130px;
+    }
+    td {
+        vertical-align: middle;
+    }
+    .invoice-title-main .spacer {
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+    }
+    .company-details, .client-details,.invoice-details .item-value,.company-bank-details{
+        text-transform: capitalize;
+    }
+    .invoice-title {
+        width: 150px;
+        text-align: center;
+        font-size: 27px;
+        line-height: 22px;
+    }
+    .client-details {
+        text-align: left;
+    }
+    .invoice-details {
+        width: 350px;
+    }
+    .invoice-details .item-label,
+    .invoice-line-items .item-label{
+        background-color: var(--bg-color);
+    }
+    .invoice-details table .item-label,
+    .invoice-details table .item-value {
+        padding: 4px 8px;
+    }
+    .invoice-line-items table .item-label,
+    .invoice-line-items table .item-value {
+        padding: 8px 10px;
+    }
+    .invoice-subtotal-heading {
+        text-align: right;
+        border-bottom: 2px solid var(--border-color);
+        width: 160px;
+        padding: 8px;
+    }
+    .invoice-subtotal {
+        text-align: right;
+        border-bottom: 2px solid var(--border-color);
+        width: 200px;
+        padding: 8px;
+    }
+    .invoice-header-main {
+        margin-bottom: 15px;
+    }
+    .invoice-title-main {
+        margin-bottom: 25px;
+    }
+    .client-details-main {
+        margin-bottom: 50px;
+    }
+    .invoice-line-items {
+        margin-bottom: 20px;
+    }
+    .terms-conditions-title {
+        margin-bottom: 15px;
+    }    
+    .company-bank-details{
+        margin-bottom: 15px;
+    }
+}

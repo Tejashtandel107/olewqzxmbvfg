@@ -1,0 +1,54 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::table('line_expense_monthly_pricings', function (Blueprint $table) {
+            $table->decimal('price_registrazioni_ordinaria',10,3)
+                        ->default(0.00)
+                        ->after('price_righe_paghe_semplificata') 
+                        ->comment('Price For ordinaria');
+            $table->decimal('price_registrazioni_semplificata',10,3)
+                        ->default(0.00)
+                        ->after('price_registrazioni_ordinaria') 
+                        ->comment('Price For semplificata');
+            $table->decimal('price_registrazioni_corrispettivi_semplificata',10,3)
+                        ->default(0.00)
+                        ->after('price_registrazioni_semplificata') 
+                        ->comment('Price For Corrispettivi(Semplificata)');
+            $table->decimal('price_registrazioni_paghe_semplificata',10,3)
+                        ->default(0.00)
+                        ->after('price_registrazioni_corrispettivi_semplificata') 
+                        ->comment('Price For Paghe(Semplificata)');
+
+            $table->decimal('total_bonus_ordinaria',10,2)->default(0.00)->after('total_paghe_lines_semplificata');
+            $table->decimal('total_bonus_semplificata',10,2)->default(0.00)->after('total_bonus_ordinaria');
+            $table->decimal('total_bonus_corrispettivi_semplificata',10,2)->default(0.00)->after('total_bonus_semplificata');
+            $table->decimal('total_bonus_paghe_semplificata',10,2)->default(0.00)->after('total_bonus_corrispettivi_semplificata');
+
+            $table->decimal('total_bonus',10,2)->default(0.00)->after('total_bonus_paghe_semplificata')->comment('Total Bonus');
+        });
+    }
+
+    public function down()
+    {
+        Schema::table('line_expense_monthly_pricings', function (Blueprint $table) {
+            $table->dropColumn('price_registrazioni_ordinaria');
+            $table->dropColumn('price_registrazioni_semplificata');
+            $table->dropColumn('price_registrazioni_corrispettivi_semplificata');
+            $table->dropColumn('price_registrazioni_paghe_semplificata');
+
+            $table->dropColumn('total_bonus_ordinaria');
+            $table->dropColumn('total_bonus_semplificata');
+            $table->dropColumn('total_bonus_corrispettivi_semplificata');
+            $table->dropColumn('total_bonus_paghe_semplificata');
+
+            $table->dropColumn('total_bonus');
+        });
+    }
+};
