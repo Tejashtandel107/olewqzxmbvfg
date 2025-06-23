@@ -83,7 +83,7 @@ class LineIncomeMonthlyController extends Controller
             'exchange_rate' => 'required_if:status,create-devpos-invoice|numeric',
         ]);
         if(!empty($request->exchange_rate)){
-            Cache(['exchange_rate'=> $request->exchange_rate],now()->addDays(15));
+            Cache::put('exchange_rate', $request->exchange_rate, now()->addDays(15));
         }
       
         $count= 0;
