@@ -120,7 +120,7 @@ class LineClientService
             }
         }
         $fileName = sprintf($fileNameformat, ($clientName) ?? 'All', $request['from_date'], $request['to_date']);
-        $fileName = str_replace('/', '', $fileName);
+        $fileName = str_replace('/', '', $fileName ?? '');
         $lineTotals = $this->getLineTotalsByClient($request)->groupBy('client_id');
         if (!empty($request["download"])) {
             return Excel::download(new ClientLinesExport(compact('lineTotals')), $fileName);

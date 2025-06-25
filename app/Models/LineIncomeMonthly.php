@@ -64,7 +64,7 @@ class LineIncomeMonthly extends Model
     protected function invoiceNumber(): Attribute
     {
         return Attribute::make(
-            get: fn($value, $attributes) => str_replace('/', '', $attributes['invoice_number']),
+            get: fn($value, $attributes) => str_replace('/', '', $attributes['invoice_number'] ?? ''),
         );
     }
     protected function totalAmount(): Attribute

@@ -37,7 +37,7 @@
 
         public function getUniqueFilename($prefix='',$more_entropy=true) {
         	$filename=uniqid($prefix,$more_entropy);
-        	$filename=str_replace('.','',$filename);
+        	$filename=str_replace('.','',$filename ?? '');
         	return $filename;
         }
 
